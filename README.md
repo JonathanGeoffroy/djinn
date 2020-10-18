@@ -1,0 +1,2 @@
+# djinn
+Typescript dependency injection
