@@ -4,7 +4,7 @@
     "description": "Typescript Dependency Injection",
     "main": "dist/index.js",
     "scripts": {
-        "compile": "tsc",
+        "compile": "tsc -d",
         "develop": "tsc --watch",
         "test": "jest"
     },
