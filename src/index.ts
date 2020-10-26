@@ -25,7 +25,7 @@ export function Injectable<T extends { new (...args: any[]): {} }>(
     for (let i = 0; i < properties.length; i++) {
         const paramType = paramTypes[i];
         const property = properties[i];
-        if (store[paramType.name]) {
+        if (!store[paramType.name]) {
             store[paramType.name] = Injectable(paramType);
         }
         constructed[property] = store[paramType.name];
