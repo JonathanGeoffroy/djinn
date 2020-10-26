@@ -6,7 +6,7 @@
     "scripts": {
         "compile": "tsc -d",
         "develop": "tsc --watch",
-        "test": "jest"
+        "test": "tsc --project ./tests/tsc && jest ./dist/tests"
     },
     "repository": {
         "type": "git",
@@ -29,6 +29,8 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
         "jest": "^26.5.3"
     }
 }
