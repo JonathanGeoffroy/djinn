@@ -1,9 +1,10 @@
 import "reflect-metadata";
+import { METADATA_INJECTED } from "./constants";
 
 export function Injectable<T extends { new (...args: any[]): {} }>(
     constructor: T
 ): T {
-    const injected: T = Reflect.getMetadata("djinn:injected", constructor);
+    const injected: T = Reflect.getMetadata(METADATA_INJECTED, constructor);
     if (injected) {
         return injected;
     }
@@ -24,7 +25,7 @@ export function Injectable<T extends { new (...args: any[]): {} }>(
         constructed[property] = injected;
     }
 
-    Reflect.defineMetadata("djinn:injected", constructed, constructor);
+    Reflect.defineMetadata(METADATA_INJECTED, constructed, constructor);
 
     return class extends constructor {
         constructor(...args: any[]) {
@@ -34,7 +35,7 @@ export function Injectable<T extends { new (...args: any[]): {} }>(
                 const property = properties[i];
                 const paramType = paramTypes[i];
                 const injected = Reflect.getMetadata(
-                    "djinn:injected",
+                    METADATA_INJECTED,
                     paramType
                 );
 

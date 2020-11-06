@@ -1,11 +1,12 @@
-import { Injectable } from "../../src";
+import * as Injector from "../../src/injector";
+import { Injectable } from "../../src/injectable";
 
 test("Inject simple dependency", () => {
     @Injectable
     class Dependency {}
 
     @Injectable
-    class ComponentA {
+    class Component {
         constructor(private dep: Dependency) {}
 
         get dependency() {
@@ -13,10 +14,13 @@ test("Inject simple dependency", () => {
         }
     }
 
-    expect(Reflect.construct(ComponentA, []).dependency).toBeDefined();
-    expect(new ComponentA(new Dependency()).dependency).toBe(
-        new ComponentA(new Dependency()).dependency
-    );
+    const injected = Injector.get(Component);
+
+    expect(injected).toBeDefined();
+    expect(injected).toBe(Injector.get(Component));
+
+    expect(injected.dependency).toBeDefined();
+    expect(injected.dependency).toBe(Injector.get(Dependency));
 });
 
 test("Inject multiple dependencies", () => {
@@ -27,7 +31,7 @@ test("Inject multiple dependencies", () => {
     class DependencyB {}
 
     @Injectable
-    class ComponentB {
+    class Component {
         constructor(private depA: DependencyA, private depB: DependencyB) {}
 
         get dependencyA() {
@@ -39,18 +43,25 @@ test("Inject multiple dependencies", () => {
         }
     }
 
-    const component = Reflect.construct(ComponentB, []);
+    const component = Injector.get(Component);
+
+    expect(component).toBeDefined();
+    expect(component).toBe(Injector.get(Component));
+
     expect(component.dependencyA).toBeDefined();
+    expect(component.dependencyA).toBe(Injector.get(DependencyA));
+
     expect(component.dependencyB).toBeDefined();
+    expect(component.dependencyB).toBe(Injector.get(DependencyB));
 });
 
 test("Inject deep dependency", () => {
     @Injectable
-    class DependencyAA {}
+    class DependencyA {}
 
     @Injectable
-    class DependencyAB {
-        constructor(private dep: DependencyAA) {}
+    class DependencyB {
+        constructor(private dep: DependencyA) {}
 
         get dependency() {
             return this.dep;
@@ -58,15 +69,21 @@ test("Inject deep dependency", () => {
     }
 
     @Injectable
-    class ComponentC {
-        constructor(private dep: DependencyAB) {}
+    class Component {
+        constructor(private dep: DependencyB) {}
 
         get dependency() {
             return this.dep;
         }
     }
 
-    const component = Reflect.construct(ComponentC, []);
+    const component = Injector.get(Component);
+    expect(component).toBeDefined();
+    expect(component).toBe(Injector.get(Component));
+
     expect(component.dependency).toBeDefined();
+    expect(component.dependency).toBe(Injector.get(DependencyB));
+
     expect(component.dependency.dependency).toBeDefined();
+    expect(component.dependency.dependency).toBe(Injector.get(DependencyA));
 });
