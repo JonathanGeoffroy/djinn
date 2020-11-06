@@ -14,6 +14,9 @@ test("Inject simple dependency", () => {
     }
 
     expect(Reflect.construct(ComponentA, []).dependency).toBeDefined();
+    expect(new ComponentA(new Dependency()).dependency).toBe(
+        new ComponentA(new Dependency()).dependency
+    );
 });
 
 test("Inject multiple dependencies", () => {
