@@ -1,6 +1,7 @@
 import * as Injector from "../../src/injector";
 import { Injectable } from "../../src/injectable";
 import { Component } from "../../src/component";
+import { Inject } from "../../src/inject";
 
 test("Create component without dependencies", () => {
     @Component
@@ -96,4 +97,54 @@ test("Create component with multiple dependencies", () => {
     expect(component.dependencyC).toBe(Injector.get(DependencyC));
     expect(component.dependencyC).toBe(new MyComponent().dependencyC);
     expect(component.dependencyB?.dependency).toBe(component.dependencyC);
+});
+
+test("Create component with `inject` dependency", () => {
+    @Injectable
+    class Dependency {}
+
+    @Component
+    class MyComponent {
+        @Inject
+        dependency!: Dependency;
+    }
+
+    const component = new MyComponent();
+
+    expect(component).toBeDefined();
+    expect(component).not.toBe(new MyComponent());
+
+    expect(component.dependency).toBeDefined();
+    expect(component.dependency).toBe(Injector.get(Dependency));
+    expect(component.dependency).toBe(new MyComponent().dependency);
+});
+
+test("Create component with mixing constructor and `inject` dependencies", () => {
+    @Injectable
+    class Dependency {}
+
+    @Component
+    class MyComponent {
+        @Inject
+        dependency!: Dependency;
+
+        constructor(private dep?: Dependency) {}
+
+        get constructorDep() {
+            return this.dep;
+        }
+    }
+
+    const component = new MyComponent();
+
+    expect(component).toBeDefined();
+    expect(component).not.toBe(new MyComponent());
+
+    expect(component.dependency).toBeDefined();
+    expect(component.dependency).toBe(Injector.get(Dependency));
+    expect(component.dependency).toBe(new MyComponent().dependency);
+
+    expect(component.constructorDep).toBeDefined();
+    expect(component.constructorDep).toBe(Injector.get(Dependency));
+    expect(component.constructorDep).toBe(new MyComponent().constructorDep);
 });
