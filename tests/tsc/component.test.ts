@@ -1,7 +1,4 @@
-import * as Injector from "../../src/injector";
-import { Injectable } from "../../src/injectable";
-import { Component } from "../../src/component";
-import { Inject } from "../../src/inject";
+import Injector, { Inject, Injectable, Component } from "../../src";
 
 test("Create component without dependencies", () => {
     @Component

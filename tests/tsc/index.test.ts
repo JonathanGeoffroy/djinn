@@ -1,5 +1,4 @@
-import * as Injector from "../../src/injector";
-import { Injectable } from "../../src/injectable";
+import Injector, { Injectable } from "../../src";
 
 test("Inject simple dependency", () => {
     @Injectable
