@@ -7,7 +7,8 @@ export function Inject(target: any, propertyKey: string) {
         propertyKey
     );
 
-    const targetDeps = Reflect.getMetadata(METADATA_DEPS, target) || {};
+    const targetDeps =
+        Reflect.getMetadata(METADATA_DEPS, target.constructor) || {};
     targetDeps[propertyKey] = propertyType;
 
     Reflect.defineMetadata(METADATA_DEPS, targetDeps, target.constructor);
