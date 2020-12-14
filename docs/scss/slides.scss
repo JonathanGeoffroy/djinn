@@ -1,0 +1,267 @@
+.reveal .slides section {
+  &.speaker-slide,
+  &.transition {
+    .email,
+    .email:hover,
+    a,
+    a:hover {
+      color: white;
+    }
+  }
+
+  .with-code-dark .hljs {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  pre code.hljs {
+    max-height: 550px;
+  }
+
+  pre.too-long {
+    background: #2b2b2b;
+    code.hljs {
+      max-height: 80vh;
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+  }
+
+  p.file-name {
+    color: #7d7d7d;
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  .reveal section {
+    > ul,
+    > ol {
+      line-height: 2em;
+    }
+  }
+
+  p.code-info {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    color: white;
+    font-size: 3em;
+  }
+
+  .timeline,
+  .timeline-labels {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+
+    .timeline-block,
+    .timeline-label {
+      flex-basis: 34%;
+      padding: 1em 2em;
+
+      &:not(:last-child) {
+        margin-right: 0.5em;
+      }
+
+      &.big {
+        flex-basis: 70%;
+      }
+    }
+
+    .timeline-block {
+      background-color: black;
+      color: white;
+
+      &.static {
+        background-color: #0097a7;
+      }
+
+      &.runtime {
+        background-color: #7890ac;
+      }
+
+      .timeline-block-title {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+        font-weight: lighter;
+      }
+
+      .timeline-block-text {
+        font-size: 0.8em;
+      }
+    }
+
+    .timeline-label {
+      position: relative;
+      width: 100%;
+      flex-grow: 1;
+      &.static {
+        color: #0097a7;
+        border-color: #0097a7;
+      }
+
+      &.runtime {
+        color: #7890ac;
+        border-color: #7890ac;
+      }
+
+      &::before {
+        top: 33%;
+        left: 0;
+        width: 33%;
+        height: 0.5em;
+        border-bottom: 4px solid;
+        position: absolute;
+        content: '';
+      }
+
+      &::after {
+        top: 33%;
+        right: 0;
+        width: 33%;
+        height: 0.5em;
+        border-bottom: 4px solid;
+        position: absolute;
+        content: '';
+      }
+
+      &.big {
+        &::before,
+        &:after {
+          width: 40%;
+        }
+      }
+    }
+  }
+
+  #circular {
+    position: relative;
+    margin: auto;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    > * {
+      padding: 1em;
+      border: 2px solid black;
+      border-radius: 100%;
+    }
+
+    &:before {
+      position: absolute;
+      top: -45px;
+      border: 4px solid;
+      border-color: red transparent transparent transparent;
+      border-radius: 100%;
+      height: 300px;
+      width: 66%;
+      content: '';
+    }
+  }
+
+  .ast-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tree,
+  .tree ul,
+  .tree li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .tree {
+    margin: 0 0 1em;
+    text-align: center;
+  }
+
+  .tree,
+  .tree ul {
+    display: table;
+    text-align: center;
+  }
+
+  .tree ul {
+    width: 100%;
+  }
+
+  .tree li {
+    display: table-cell;
+    padding: 0.5em 0;
+    vertical-align: top;
+  }
+
+  .tree li:before {
+    outline: solid 1px #666;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .tree li:first-child:before {
+    left: 50%;
+  }
+
+  .tree li:last-child:before {
+    right: 50%;
+  }
+
+  .tree code,
+  .tree span {
+    border: solid 0.1em #666;
+    border-radius: 0.2em;
+    display: inline-block;
+    margin: 0 0.2em 0.5em;
+    padding: 0.2em 0.5em;
+    position: relative;
+  }
+
+  .tree ul:before,
+  .tree code:before,
+  .tree span:before {
+    outline: solid 1px #666;
+    content: '';
+    height: 0.5em;
+    left: 50%;
+    position: absolute;
+  }
+
+  .tree ul:before {
+    top: -0.5em;
+  }
+
+  .tree code:before,
+  .tree span:before {
+    top: -0.55em;
+  }
+
+  .tree > li {
+    margin-top: 0;
+  }
+
+  .tree > li:before,
+  .tree > li:after,
+  .tree > li > code:before,
+  .tree > li > span:before {
+    outline: none;
+  }
+
+  .tree .tree-cost {
+    color: #dd3355;
+    border-color: darken(#dd3355, 5);
+  }
+
+  .tree .tree-free {
+    color: #33ddbb;
+    border-color: darken(#33ddbb, 5);
+  }
+}
