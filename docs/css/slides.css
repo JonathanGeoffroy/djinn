@@ -1,0 +1,224 @@
+.reveal .slides section.speaker-slide .email,
+.reveal .slides section.speaker-slide .email:hover,
+.reveal .slides section.speaker-slide a,
+.reveal .slides section.speaker-slide a:hover, .reveal .slides section.transition .email,
+.reveal .slides section.transition .email:hover,
+.reveal .slides section.transition a,
+.reveal .slides section.transition a:hover {
+  color: white; }
+
+.reveal .slides section .with-code-dark .hljs {
+  font-size: 2rem;
+  line-height: 3rem; }
+
+.reveal .slides section pre code.hljs {
+  max-height: 550px; }
+
+.reveal .slides section pre.too-long {
+  background: #2b2b2b; }
+  .reveal .slides section pre.too-long code.hljs {
+    max-height: 80vh;
+    font-size: 1em;
+    line-height: 1.2em; }
+
+.reveal .slides section p.file-name {
+  color: #7d7d7d;
+  display: block;
+  width: 90%;
+  margin: auto; }
+
+.reveal .slides section .reveal section > ul,
+.reveal .slides section .reveal section > ol {
+  line-height: 2em; }
+
+.reveal .slides section p.code-info {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  color: white;
+  font-size: 3em; }
+
+.reveal .slides section .timeline,
+.reveal .slides section .timeline-labels {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  text-align: center; }
+  .reveal .slides section .timeline .timeline-block,
+  .reveal .slides section .timeline .timeline-label,
+  .reveal .slides section .timeline-labels .timeline-block,
+  .reveal .slides section .timeline-labels .timeline-label {
+    flex-basis: 34%;
+    padding: 1em 2em; }
+    .reveal .slides section .timeline .timeline-block:not(:last-child),
+    .reveal .slides section .timeline .timeline-label:not(:last-child),
+    .reveal .slides section .timeline-labels .timeline-block:not(:last-child),
+    .reveal .slides section .timeline-labels .timeline-label:not(:last-child) {
+      margin-right: 0.5em; }
+    .reveal .slides section .timeline .timeline-block.big,
+    .reveal .slides section .timeline .timeline-label.big,
+    .reveal .slides section .timeline-labels .timeline-block.big,
+    .reveal .slides section .timeline-labels .timeline-label.big {
+      flex-basis: 70%; }
+  .reveal .slides section .timeline .timeline-block,
+  .reveal .slides section .timeline-labels .timeline-block {
+    background-color: black;
+    color: white; }
+    .reveal .slides section .timeline .timeline-block.static,
+    .reveal .slides section .timeline-labels .timeline-block.static {
+      background-color: #0097a7; }
+    .reveal .slides section .timeline .timeline-block.runtime,
+    .reveal .slides section .timeline-labels .timeline-block.runtime {
+      background-color: #7890ac; }
+    .reveal .slides section .timeline .timeline-block .timeline-block-title,
+    .reveal .slides section .timeline-labels .timeline-block .timeline-block-title {
+      margin-bottom: 1em;
+      font-size: 1.5em;
+      font-weight: lighter; }
+    .reveal .slides section .timeline .timeline-block .timeline-block-text,
+    .reveal .slides section .timeline-labels .timeline-block .timeline-block-text {
+      font-size: 0.8em; }
+  .reveal .slides section .timeline .timeline-label,
+  .reveal .slides section .timeline-labels .timeline-label {
+    position: relative;
+    width: 100%;
+    flex-grow: 1; }
+    .reveal .slides section .timeline .timeline-label.static,
+    .reveal .slides section .timeline-labels .timeline-label.static {
+      color: #0097a7;
+      border-color: #0097a7; }
+    .reveal .slides section .timeline .timeline-label.runtime,
+    .reveal .slides section .timeline-labels .timeline-label.runtime {
+      color: #7890ac;
+      border-color: #7890ac; }
+    .reveal .slides section .timeline .timeline-label::before,
+    .reveal .slides section .timeline-labels .timeline-label::before {
+      top: 33%;
+      left: 0;
+      width: 33%;
+      height: 0.5em;
+      border-bottom: 4px solid;
+      position: absolute;
+      content: ''; }
+    .reveal .slides section .timeline .timeline-label::after,
+    .reveal .slides section .timeline-labels .timeline-label::after {
+      top: 33%;
+      right: 0;
+      width: 33%;
+      height: 0.5em;
+      border-bottom: 4px solid;
+      position: absolute;
+      content: ''; }
+    .reveal .slides section .timeline .timeline-label.big::before, .reveal .slides section .timeline .timeline-label.big:after,
+    .reveal .slides section .timeline-labels .timeline-label.big::before,
+    .reveal .slides section .timeline-labels .timeline-label.big:after {
+      width: 40%; }
+
+.reveal .slides section #circular {
+  position: relative;
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%; }
+  .reveal .slides section #circular > * {
+    padding: 1em;
+    border: 2px solid black;
+    border-radius: 100%; }
+  .reveal .slides section #circular:before {
+    position: absolute;
+    top: -45px;
+    border: 4px solid;
+    border-color: red transparent transparent transparent;
+    border-radius: 100%;
+    height: 300px;
+    width: 66%;
+    content: ''; }
+
+.reveal .slides section .ast-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-between; }
+
+.reveal .slides section .tree,
+.reveal .slides section .tree ul,
+.reveal .slides section .tree li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+.reveal .slides section .tree {
+  margin: 0 0 1em;
+  text-align: center; }
+
+.reveal .slides section .tree,
+.reveal .slides section .tree ul {
+  display: table;
+  text-align: center; }
+
+.reveal .slides section .tree ul {
+  width: 100%; }
+
+.reveal .slides section .tree li {
+  display: table-cell;
+  padding: 0.5em 0;
+  vertical-align: top; }
+
+.reveal .slides section .tree li:before {
+  outline: solid 1px #666;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.reveal .slides section .tree li:first-child:before {
+  left: 50%; }
+
+.reveal .slides section .tree li:last-child:before {
+  right: 50%; }
+
+.reveal .slides section .tree code,
+.reveal .slides section .tree span {
+  border: solid 0.1em #666;
+  border-radius: 0.2em;
+  display: inline-block;
+  margin: 0 0.2em 0.5em;
+  padding: 0.2em 0.5em;
+  position: relative; }
+
+.reveal .slides section .tree ul:before,
+.reveal .slides section .tree code:before,
+.reveal .slides section .tree span:before {
+  outline: solid 1px #666;
+  content: '';
+  height: 0.5em;
+  left: 50%;
+  position: absolute; }
+
+.reveal .slides section .tree ul:before {
+  top: -0.5em; }
+
+.reveal .slides section .tree code:before,
+.reveal .slides section .tree span:before {
+  top: -0.55em; }
+
+.reveal .slides section .tree > li {
+  margin-top: 0; }
+
+.reveal .slides section .tree > li:before,
+.reveal .slides section .tree > li:after,
+.reveal .slides section .tree > li > code:before,
+.reveal .slides section .tree > li > span:before {
+  outline: none; }
+
+.reveal .slides section .tree .tree-cost {
+  color: #dd3355;
+  border-color: #d32346; }
+
+.reveal .slides section .tree .tree-free {
+  color: #33ddbb;
+  border-color: #23d3b0; }
+
+/*# sourceMappingURL=slides.css.map */
