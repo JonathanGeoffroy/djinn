@@ -6,6 +6,6 @@ This is a _test_ repository illustrating typescript dependency injection for a p
 
 Please, DO NOT use this in production ; this is for test purpose only. There are plenty of great dependency injection libraries on github, please use them instead of this.
 
-## Contact us
+## Contact
 
-Feel free to contact us for any kind of questions, especially if you want to discover Sfeir :)   recrutement.ta.sfeir@gmail.com
+Bravo !! Si tu as réussi cette énigme, et que tu t'es amusé à la trouver, tu as ta place dans l'équipe recrutement de SFEIR. Envoie vite ta candidature à : jobs@sfeir.com
