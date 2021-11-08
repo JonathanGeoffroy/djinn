@@ -8,4 +8,6 @@ Please, DO NOT use this in production ; this is for test purpose only. There are
 
 ## Contact
 
-Bravo !! Si tu as réussi cette énigme, et que tu t'es amusé à la trouver, tu as ta place dans l'équipe recrutement de SFEIR. Envoie vite ta candidature à : jobs@sfeir.com
+Bravo ! Si tu t’es amusé.e à trouver cette énigme, il y a de fortes chances que tu t’epanouisses dans notre équipe 🤗. Envoie moi vite ton profil linkedin à jobs@sfeir.com 
+
+Vanessa Perillat
